@@ -1,0 +1,118 @@
+/* UNUSED FILE — not imported by style.css.
+   The hero is part of header-hero.css instead. Safe to delete. */
+
+.hero {
+  min-height: min(100vh, 840px);
+  display: grid;
+  align-items: end;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-hero-blue);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__pattern-blue-before,
+.hero__pattern-yellow-after {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__pattern-blue-before {
+  inset: auto -15% -15% auto;
+  width: min(68vw, 620px);
+  height: min(68vw, 620px);
+  opacity: 0.28;
+}
+
+.hero__pattern-blue-before img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero__pattern-yellow-after {
+  inset: -20% auto auto -12%;
+  width: min(50vw, 460px);
+  height: min(50vw, 460px);
+  opacity: 0.14;
+}
+
+.hero__pattern-yellow-after img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero__wave {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  height: min(26vw, 180px);
+  z-index: 2;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.hero__inner {
+  padding-bottom: 72px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero__label {
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 18vw, 9rem);
+  line-height: 0.88;
+  margin-bottom: 20px;
+}
+
+.hero__title::after {
+  display: none;
+}
+
+.hero__roles {
+  font-size: clamp(1rem, 3vw, 2rem);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.hero__text {
+  margin-top: 20px;
+  max-width: 740px;
+  margin-inline: auto;
+}
+.hero {
+  text-align: left;
+}
+
+.hero__inner {
+  padding-bottom: 88px;
+}
+
+.hero__text {
+  margin-inline: 0;
+}

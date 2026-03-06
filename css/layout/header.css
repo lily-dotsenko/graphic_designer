@@ -1,0 +1,68 @@
+/* UNUSED FILE — not imported by style.css.
+   header-hero.css is used instead. Safe to delete. */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-nav {
+  padding-block: 12px;
+}
+
+.header-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-nav__logo {
+  width: 120px;
+}
+
+.header-nav__list,
+.header-nav__cta {
+  display: none;
+}
+
+.header-nav__burger {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+}
+
+.header-nav__burger span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+}
+
+@media (min-width: 768px) {
+  .header-nav__logo {
+    width: 160px;
+  }
+
+  .header-nav__list {
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .header-nav__burger {
+    display: none;
+  }
+
+  .header-nav__cta {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-nav__list {
+    gap: 34px;
+  }
+}

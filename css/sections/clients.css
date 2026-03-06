@@ -1,0 +1,32 @@
+.clients {
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.clients__pattern {
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin-left: calc(-50vw + 50%);
+  object-fit: cover;
+}
+
+.clients__title::after {
+  margin-inline: auto;
+}
+
+.clients__subtitle {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.clients__inner {
+  padding-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .clients__inner {
+    padding-top: 60px;
+  }
+}

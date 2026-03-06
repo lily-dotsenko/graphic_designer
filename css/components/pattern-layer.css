@@ -1,0 +1,77 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.section--pattern-blue::before,
+.section--pattern-yellow::before,
+.section--pattern-orange::before,
+.section--pattern-dark::before,
+.section--pattern-blue::after,
+.section--pattern-yellow::after,
+.section--pattern-orange::after,
+.section--pattern-dark::after {
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.section--pattern-blue::before {
+  inset: auto -15% -15% auto;
+  width: min(68vw, 620px);
+  height: min(68vw, 620px);
+  opacity: 0.28;
+}
+
+.section--pattern-blue::after {
+  inset: -20% auto auto -12%;
+  width: min(50vw, 460px);
+  height: min(50vw, 460px);
+  opacity: 0.14;
+}
+
+.section--pattern-yellow::before {
+  inset: auto auto -24% -14%;
+  width: min(70vw, 680px);
+  height: min(70vw, 680px);
+  opacity: 0.22;
+}
+
+.section--pattern-yellow::after {
+  inset: -16% -10% auto auto;
+  width: min(54vw, 520px);
+  height: min(54vw, 520px);
+  opacity: 0.12;
+}
+
+.section--pattern-orange::before {
+  inset: -12% -12% auto auto;
+  width: min(64vw, 620px);
+  height: min(64vw, 620px);
+  opacity: 0.18;
+}
+
+.section--pattern-orange::after {
+  inset: auto auto -26% -10%;
+  width: min(62vw, 600px);
+  height: min(62vw, 600px);
+  opacity: 0.2;
+}
+
+.section--pattern-dark::before {
+  inset: 0;
+  opacity: 0.2;
+}
+
+.section--pattern-dark::after {
+  inset: auto -12% -22% auto;
+  width: min(64vw, 620px);
+  height: min(64vw, 620px);
+  opacity: 0.12;
+}

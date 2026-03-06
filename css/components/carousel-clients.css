@@ -1,0 +1,275 @@
+/* ================================================================== */
+/*  Clients Carousel                                                   */
+/* ================================================================== */
+
+.carousel-clients {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+/* ---- Track (holds all cards in a row) ---- */
+
+.carousel-clients__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+
+/* ---- Individual card ---- */
+
+.carousel-clients__item {
+  flex: 0 0 100%; /* default: 1 card visible */
+  min-width: 0;
+  background: var(--color-dark);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.carousel-clients__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+}
+
+.carousel-clients__item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---- Prev / Next controls ---- */
+
+.carousel-clients__control {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  color: #000;
+  font-size: 40px;
+  line-height: 1;
+  padding: 0 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+  z-index: 2;
+}
+
+.carousel-clients__control:hover,
+.carousel-clients__control:focus {
+  background: transparent;
+  color: #000;
+  border-color: transparent;
+  outline: none;
+  opacity: 0.75;
+}
+
+/* ================================================================== */
+/*  Responsive breakpoints                                             */
+/* ================================================================== */
+
+/* 2 cards from 991px */
+@media (min-width: 991px) {
+  .carousel-clients__item {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
+/* 4 cards from 1091px */
+@media (min-width: 1091px) {
+  .carousel-clients__item {
+    flex: 0 0 calc((100% - 60px) / 4);
+  }
+}
+
+/* ================================================================== */
+/*  Clients Modal (image preview)                                      */
+/* ================================================================== */
+
+.clients-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.clients-modal.clients-modal--active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Backdrop */
+.clients-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark-strong);
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Container */
+.clients-modal__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 20px;
+}
+
+/* Content wrapper */
+.clients-modal__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80vw;
+  max-height: 80vh;
+  z-index: 3;
+}
+
+/* Image */
+.clients-modal__image {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+  animation: clients-modal-fade-in 0.3s ease-out;
+  background: transparent;
+  padding: 0;
+}
+
+@keyframes clients-modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Close button */
+.clients-modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 28px;
+  color: var(--color-white);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.clients-modal__close:hover,
+.clients-modal__close:focus {
+  transform: scale(1.2);
+  color: var(--color-yellow);
+  outline: none;
+}
+
+.clients-modal__close-icon {
+  display: block;
+  line-height: 1;
+}
+
+/* Navigation arrows */
+.clients-modal__nav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-dark);
+  border: 1px solid var(--overlay-dark-strong);
+  cursor: pointer;
+  padding: 12px 16px;
+  font-size: 24px;
+  color: var(--color-white);
+  z-index: 4;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.clients-modal__nav:hover,
+.clients-modal__nav:focus {
+  background: var(--overlay-white-subtle);
+  border-color: var(--overlay-white-medium);
+  color: var(--color-yellow);
+  outline: none;
+}
+
+.clients-modal__nav--prev {
+  left: 20px;
+}
+
+.clients-modal__nav--next {
+  right: 20px;
+}
+
+.clients-modal__nav-icon {
+  display: block;
+  line-height: 1;
+}
+
+/* Responsive tweaks for modal */
+@media (max-width: 600px) {
+  .clients-modal__container {
+    padding: 10px;
+  }
+
+  .clients-modal__close {
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    padding: 6px 10px;
+  }
+
+  .clients-modal__nav {
+    padding: 10px 12px;
+    font-size: 20px;
+  }
+
+  .clients-modal__nav--prev {
+    left: 10px;
+  }
+
+  .clients-modal__nav--next {
+    right: 10px;
+  }
+}

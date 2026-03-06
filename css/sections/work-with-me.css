@@ -1,0 +1,40 @@
+.work-with-me {
+  text-align: center;
+  overflow: hidden;
+  padding-top: 0;
+}
+
+.work-with-me__pattern {
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin-inline: calc(-50vw + 50%);
+  margin-bottom: 0;
+}
+
+.work-with-me__title::after {
+  margin-inline: auto;
+}
+
+.work-with-me__text {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.work-with-me__actions {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.work-with-me__inner {
+  padding-top: 48px;
+}
+
+@media (min-width: 768px) {
+  .work-with-me__inner {
+    padding-top: 64px;
+  }
+}

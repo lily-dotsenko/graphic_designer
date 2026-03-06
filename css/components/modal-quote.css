@@ -1,0 +1,57 @@
+.modal-quote {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+}
+
+.modal-quote:target {
+  display: grid;
+  place-items: center;
+}
+
+.modal-quote__backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark-medium);
+}
+
+.modal-quote__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 560px);
+  background: var(--color-blue);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-md);
+}
+
+.modal-quote__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 1.5rem;
+}
+
+.modal-quote__form {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.modal-quote__form input,
+.modal-quote__form textarea {
+  border: 0;
+  border-radius: 999px;
+  background: var(--overlay-white-soft);
+  color: var(--color-white);
+  min-height: 50px;
+  padding: 0 16px;
+}
+
+.modal-quote__form textarea {
+  border-radius: var(--radius-md);
+  min-height: 130px;
+  padding: 12px 16px;
+}

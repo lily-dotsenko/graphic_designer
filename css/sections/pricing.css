@@ -1,0 +1,155 @@
+.pricing__inner {
+  display: grid;
+  gap: 22px;
+}
+
+/* left text styles */
+.pricing__intro {
+  margin-top: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.pricing__description {
+  margin-top: 18px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.pricing__benefits {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.pricing__benefits li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.pricing__benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 900;
+}
+
+.pricing__plans {
+  display: grid;
+  gap: 20px;
+}
+
+/* CARD */
+.pricing-card {
+  border-radius: var(--radius-sm);
+  background-color: var(--color-blue-dark);
+
+  padding: 36px;
+  min-height: 500px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pricing-card--first {
+  background-image: url("../../img/blue_blue_pattern_right.png");
+}
+
+.pricing-card--second {
+  background-image: url("../../img/pattern_blue_random.png");
+}
+
+.pricing-card__icon {
+  width: 54px;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card__title {
+  font-size: 2.2rem;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card__title::after {
+  display: none;
+}
+
+.pricing-card__price {
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: 900;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card__price span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* LIST */
+.pricing-card__list {
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+
+  list-style: none;
+  padding-left: 0;
+
+  opacity: 0.92;
+
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card__list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.pricing-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* BUTTON */
+.pricing-card .button {
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+  .pricing__inner {
+    grid-template-columns: 0.8fr 1.8fr;
+    gap: 40px;
+  }
+
+  .pricing__plans {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .pricing-card {
+    min-height: 540px;
+  }
+}

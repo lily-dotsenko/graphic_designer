@@ -1,0 +1,36 @@
+:root {
+  --color-white: #ffffff;
+  --color-yellow: #f7c30a;
+  --color-blue: #0095cc;
+  --color-orange: #ef9514;
+  --color-dark: #2b2e33;
+  --color-blue-light: #177bc6;
+  --color-blue-dark: #1475bf;
+  --color-blue-darkest: #0076cc;
+
+  --color-bg: var(--color-white);
+  --color-text: var(--color-dark);
+  --color-primary: var(--color-blue);
+  --color-accent: var(--color-yellow);
+
+  --font-heading: "Sedgwick Ave Display", sans-serif;
+
+  --overlay-hero-blue: rgba(0, 149, 204, 0.72);
+  --overlay-dark-strong: rgba(0, 0, 0, 0.66);
+  --overlay-dark-medium: rgba(0, 0, 0, 0.62);
+  --overlay-dark-grey: rgba(43, 46, 51, 0.85);
+  --overlay-white-soft: rgba(255, 255, 255, 0.12);
+  --overlay-white-subtle: rgba(255, 255, 255, 0.1);
+  --overlay-white-medium: rgba(255, 255, 255, 0.55);
+  --overlay-white-dark: rgba(255, 255, 255, 0.75);
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.18);
+  --container-max: 1200px;
+  --container-pad: 24px;
+
+  --transition: 200ms ease;
+}

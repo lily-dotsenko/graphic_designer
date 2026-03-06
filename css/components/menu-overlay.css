@@ -1,0 +1,56 @@
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.menu-overlay:target,
+.menu-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menu-overlay__panel {
+  min-height: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 20px 24px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-overlay__close {
+  margin-left: auto;
+  font-size: 2rem;
+}
+
+.menu-overlay__logo {
+  width: 140px;
+  margin: 12px auto 32px;
+}
+
+.menu-overlay__list {
+  display: grid;
+  gap: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.menu-overlay .button {
+  margin-top: 24px;
+  align-self: center;
+  width: 100%;
+  max-width: 280px;
+}
+
+@media (min-width: 991px) {
+  .menu-overlay {
+    display: none;
+  }
+}

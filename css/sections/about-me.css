@@ -1,0 +1,80 @@
+.about-me {
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+
+.about-me__inner {
+  display: grid;
+  gap: 28px;
+}
+
+.about-me__photo-wrap {
+  width: min(100%, 430px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-inline: auto;
+}
+
+.about-me__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-me__content p + p {
+  margin-top: 30px;
+}
+
+.about-me__content p {
+  color: var(--overlay-dark-grey);
+}
+
+.about-me__content p:first-of-type {
+  font-size: 1.15rem;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.about-me__socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.about-me__follow {
+  font-size: 2.2rem;
+  margin-right: 4px;
+}
+
+.about-me__socials a {
+  width: 38px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.about-me__socials a img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  transition: filter var(--transition);
+}
+
+.about-me__socials a:hover img,
+.about-me__socials a:focus-visible img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+@media (min-width: 768px) {
+  .about-me__inner {
+    grid-template-columns: minmax(280px, 40%) 1fr;
+    align-items: center;
+  }
+}

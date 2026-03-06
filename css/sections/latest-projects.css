@@ -1,0 +1,129 @@
+.latest-projects {
+  text-align: center;
+
+  background-image:
+    url("../../img/pattern_yellow-blue.png"), url("../../img/pattern_blue.png");
+
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    top center,
+    center;
+  background-size:
+    100% auto,
+    cover;
+
+  padding-top: 140px;
+}
+
+@media (min-width: 768px) {
+  .latest-projects {
+    padding-top: 220px;
+  }
+}
+
+.latest-projects__title::after {
+  margin-inline: auto;
+}
+.latest-projects__title {
+  color: var(--color-white);
+}
+
+.latest-projects__subtitle {
+  color: var(--color-white);
+}
+
+.latest-projects__subtitle {
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: 28px;
+}
+
+/* Grid container - 3 columns, 4 rows, fixed structure */
+.latest-projects__grid {
+  display: grid;
+  gap: clamp(10px, 2vw, 14px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, minmax(100px, 1fr));
+  grid-template-areas:
+    "item1 item1 item3"
+    "item1 item1 item5"
+    "item4 item2 item2"
+    "item6 item2 item2";
+}
+
+/* Grid items - all items with consistent styling */
+.latest-projects__item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-yellow);
+  min-height: 140px;
+  display: block;
+  position: relative;
+}
+
+/* Images inside grid items - fixed aspect ratio with object-fit */
+.latest-projects__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Grid positioning using grid-area - positions never change */
+.latest-projects__item--1 {
+  grid-area: item1;
+}
+
+.latest-projects__item--2 {
+  grid-area: item2;
+}
+
+.latest-projects__item--3 {
+  grid-area: item3;
+}
+
+.latest-projects__item--4 {
+  grid-area: item4;
+}
+
+.latest-projects__item--5 {
+  grid-area: item5;
+}
+
+.latest-projects__item--6 {
+  grid-area: item6;
+}
+
+/* Mobile-first: smaller screens - only cell sizes change */
+@media (max-width: 480px) {
+  .latest-projects__grid {
+    grid-template-rows: repeat(4, minmax(80px, 1fr));
+    gap: clamp(8px, 2vw, 10px);
+  }
+
+  .latest-projects__item {
+    min-height: 80px;
+  }
+}
+
+/* Tablet and larger - only cell sizes change */
+@media (min-width: 768px) {
+  .latest-projects__grid {
+    grid-template-rows: repeat(4, minmax(140px, 1fr));
+  }
+
+  .latest-projects__item {
+    min-height: 140px;
+  }
+}
+
+/* Desktop - only cell sizes change */
+@media (min-width: 1024px) {
+  .latest-projects__grid {
+    grid-template-rows: repeat(4, minmax(180px, 1fr));
+  }
+
+  .latest-projects__item {
+    min-height: 180px;
+  }
+}

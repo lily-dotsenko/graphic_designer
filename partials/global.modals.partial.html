@@ -1,0 +1,73 @@
+<section id="global-modals">
+  <div id="modal-quote" class="modal-quote" data-modal="quote">
+    <a
+      class="modal-quote__backdrop"
+      href="#"
+      aria-label="Close quote modal"
+      data-modal-close
+    ></a>
+    <div class="modal-quote__dialog">
+      <a
+        class="modal-quote__close"
+        href="#"
+        aria-label="Close quote modal"
+        data-modal-close
+        >✕</a
+      >
+      <h2 class="modal-quote__title heading">Request a Quote</h2>
+      <p class="modal-quote__text">
+        Share your project details and I'll send you a custom estimate.
+      </p>
+      <form class="modal-quote__form" action="#" method="post">
+        <input type="text" name="name" placeholder="Your full name*" required />
+        <input type="email" name="email" placeholder="Your e-mail*" required />
+        <textarea
+          name="message"
+          placeholder="Tell me about your project"
+        ></textarea>
+        <button class="button button--dark" type="submit">Send request</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-contact" class="modal-contact" data-modal="contact">
+    <div class="modal-contact__backdrop" data-contact-close></div>
+    <div class="modal-contact__dialog">
+      <button
+        class="modal-contact__close"
+        type="button"
+        aria-label="Close contact modal"
+        data-contact-close
+      >
+        ✕
+      </button>
+      <h2 class="modal-contact__title heading">Contact Me</h2>
+      <p class="modal-contact__text">
+        Fill out the short form below, and I'll get in touch as soon as
+        possible.
+      </p>
+      <form class="modal-contact__form" action="#" method="post">
+        <input
+          type="text"
+          name="full-name"
+          placeholder="Enter your full name*"
+          required
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Enter your phone number*"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your e-mail*"
+          required
+        />
+        <textarea name="message" placeholder="Type your message"></textarea>
+        <button class="button button--submit" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
